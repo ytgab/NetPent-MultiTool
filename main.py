@@ -1027,20 +1027,88 @@ def subdomain_check():
         "test"
     ]
 
+    padding = " " * ui_left()
+
+    print()
+
+    print(
+        padding
+        + f"{CYAN}[*] Starting subdomain check for "
+        f"{target}{RESET}"
+    )
+
+    print()
+
     for subdomain in subdomains:
 
-        hostname = (
-            f"{subdomain}.{target}"
+        hostname = f"{subdomain}.{target}"
+
+        print(
+            padding
+            + f"{CYAN}[*] Checking {hostname}{RESET}"
         )
 
-        cprint(
-            f"{CYAN}[*] Checking {hostname}{RESET}"
-        )
+        try:
 
-        run_command([
-            "host",
-            hostname
-        ])
+            result = subprocess.run(
+                [
+                    "host",
+                    hostname
+                ],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True,
+                check=False
+            )
+
+            output = result.stdout or ""
+
+            # ------------------------------------------------
+            # Subdomain does not exist
+            # ------------------------------------------------
+
+            if result.returncode != 0:
+
+                print(
+                    padding
+                    + f"{GRAY}[-] NXDOMAIN{RESET}"
+                )
+
+                print()
+
+                continue
+
+            # ------------------------------------------------
+            # Subdomain found
+            # ------------------------------------------------
+
+            print(
+                padding
+                + f"{GREEN}[+] FOUND "
+                f"{hostname}{RESET}"
+            )
+
+            for line in output.splitlines():
+
+                line = line.strip()
+
+                if not line:
+                    continue
+
+                print(
+                    padding
+                    + f"{WHITE}    {line}{RESET}"
+                )
+
+        except Exception as error:
+
+            print(
+                padding
+                + f"{RED}[!] Error checking "
+                f"{hostname}: {error}{RESET}"
+            )
+
+        print()
 
     pause()
 
