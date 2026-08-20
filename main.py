@@ -764,39 +764,26 @@ def hping_test():
     print()
 
     cprint(
-        f"{YELLOW}[!] Limited ICMP diagnostic test: 5 packets.{RESET}"
+        f"{YELLOW}[!] Authorized diagnostic testing only.{RESET}"
     )
 
     cprint(
-        f"{CYAN}[!] Press CTRL+C to stop the test.{RESET}"
+        f"{YELLOW}[!] Press Q at any time to stop hping3.{RESET}"
     )
 
     print()
 
-    try:
-
-        run_command([
-            "sudo",
-            "hping3",
-            "--icmp",
-            "-c",
-            "5",
-            "-d",
-            "65000",
-            "-V",
-            target
-        ])
-
-    except KeyboardInterrupt:
-
-        print()
-
-        cprint(
-            f"{YELLOW}[!] Test stopped by user.{RESET}"
-        )
+    run_hping_interruptible([
+        "sudo",
+        "hping3",
+        "--icmp",
+        "-d",
+        "65000",
+        "-V",
+        target
+    ])
 
     pause()
-
 
 # ============================================================
 # WEB TOOLS
