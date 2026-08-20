@@ -71,14 +71,15 @@ That's it.
 
 ## Navigation
 
-```text
+```
 P   Previous page
 N   Next page
 60  Information
 61  Settings
 99  Exit
+```
 
-## Troubleshooting
+## **Troubleshooting**
 
 If you encounter any problems with NETPENT or one of the tools, please contact me on Discord.
 
