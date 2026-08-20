@@ -778,7 +778,7 @@ def hping_test():
         "--icmp",
         "-d",
         "65000",
-        "-V"
+        "-V",
         port,
         target
     ])
