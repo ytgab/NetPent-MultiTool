@@ -775,10 +775,10 @@ def hping_test():
     run_command([
         "sudo",
         "hping3",
-        "-c",
-        "5",
-        "-S",
-        "-p",
+        "--icmp",
+        "-d",
+        "65000",
+        "-V"
         port,
         target
     ])
