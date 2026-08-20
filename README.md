@@ -3,7 +3,7 @@
 > Linux Security Testing & Network Diagnostics Toolkit
 
 ## Installation
-
+```
 git clone https://github.com/ytgab/NetPent-MultiTool
 
 cd "NetPent-MultiTool"
@@ -13,14 +13,13 @@ sudo apt update
 sudo apt install nmap hping3 curl dnsutils whois traceroute openssl -y
 
 sudo apt install whatweb
-
+```
 ## Start NETPENT
 
 Run:
-
+```
 python3 main.py
-
-That's it.
+```
 
 ## Features
 
