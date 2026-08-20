@@ -745,6 +745,18 @@ def dns_lookup():
     pause()
 
 
+def run_hping_interruptible(command):
+
+    try:
+        run_command(command)
+
+    except KeyboardInterrupt:
+        print()
+        cprint(
+            f"{YELLOW}[!] hping3 stopped by user.{RESET}"
+        )
+
+
 def hping_test():
 
     target = get_target()
@@ -792,7 +804,8 @@ def local_network():
         "addr"
     ])
 
-    pause()
+    pause()    
+
 
 # ============================================================
 # WEB TOOLS
@@ -1600,3 +1613,4 @@ if __name__ == "__main__":
         print()
 
         sys.exit(0)
+
