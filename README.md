@@ -6,7 +6,7 @@
 
 git clone https://github.com/ytgab/NetPent-MultiTool
 
-cd "MultiTool project"
+cd "NetPent-MultiTool"
 
 sudo apt update
 
