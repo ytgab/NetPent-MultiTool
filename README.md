@@ -77,3 +77,11 @@ N   Next page
 60  Information
 61  Settings
 99  Exit
+
+## Troubleshooting
+
+If you encounter any problems with NETPENT or one of the tools, please contact me on Discord.
+
+**Discord:** `hsjsh0290_21919`
+
+Please include the error message and the tool that caused the problem when reporting an issue.
