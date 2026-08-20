@@ -1,0 +1,87 @@
+# NETPENT
+
+> Linux Security Testing & Network Diagnostics Toolkit
+
+## Installation
+
+Clone the repository:
+
+git clone YOUR_GITHUB_REPOSITORY_URL
+
+Enter the project directory:
+
+cd "MultiTool project"
+
+Install the required Linux tools:
+
+sudo apt update
+
+sudo apt install nmap hping3 curl dnsutils whois traceroute openssl -y
+
+Optional:
+
+sudo apt install whatweb
+
+## Start NETPENT
+
+Run:
+
+python3 main.py
+
+That's it.
+
+## Features
+
+### Scanning
+
+- Simple Port Scan
+- Service Detection
+- OS Detection
+- Common Ports
+- Full Nmap Scan
+
+### Network
+
+- Ping
+- Traceroute
+- DNS Lookup
+- hping3 diagnostic test
+- Local Network information
+
+### Web
+
+- HTTP Headers
+- HTTP Status
+- TLS Information
+- WhatWeb technology detection
+
+### DNS
+
+- DNS Lookup
+- Reverse DNS
+- MX Records
+- NS Records
+- TXT Records
+
+### OSINT
+
+- Whois
+- DNS Information
+- Basic Subdomain Checks
+
+### Utility
+
+- Public IP
+- Local IP
+- Network Interfaces
+- Active Connections
+- Tool Status
+
+## Navigation
+
+```text
+P   Previous page
+N   Next page
+60  Information
+61  Settings
+99  Exit
