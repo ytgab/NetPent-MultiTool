@@ -4,21 +4,15 @@
 
 ## Installation
 
-Clone the repository:
+#Just copy everything below until sudo apt install whatweb
 
 git clone https://github.com/ytgab/NetPent-MultiTool
 
-Enter the project directory:
-
 cd "MultiTool project"
-
-Install the required Linux tools:
 
 sudo apt update
 
 sudo apt install nmap hping3 curl dnsutils whois traceroute openssl -y
-
-Optional:
 
 sudo apt install whatweb
 
