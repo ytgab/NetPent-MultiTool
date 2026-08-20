@@ -761,27 +761,39 @@ def hping_test():
         pause()
         return
 
-    port = get_port()
-
-    if not port:
-        return
-
     print()
 
     cprint(
-        f"{YELLOW}[!] Limited diagnostic test: 5 packets.{RESET}"
+        f"{YELLOW}[!] Limited ICMP diagnostic test: 5 packets.{RESET}"
     )
 
-    run_command([
-        "sudo",
-        "hping3",
-        "--icmp",
-        "-d",
-        "65000",
-        "-V",
-        port,
-        target
-    ])
+    cprint(
+        f"{CYAN}[!] Press CTRL+C to stop the test.{RESET}"
+    )
+
+    print()
+
+    try:
+
+        run_command([
+            "sudo",
+            "hping3",
+            "--icmp",
+            "-c",
+            "5",
+            "-d",
+            "65000",
+            "-V",
+            target
+        ])
+
+    except KeyboardInterrupt:
+
+        print()
+
+        cprint(
+            f"{YELLOW}[!] Test stopped by user.{RESET}"
+        )
 
     pause()
 
